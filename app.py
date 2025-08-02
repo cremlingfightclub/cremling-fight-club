@@ -140,23 +140,24 @@ for i, col in enumerate(filtered_df.columns, start=1):
     )
 st.divider()
 # Display each row
-cols = st.columns(column_widths)
-
 for row in filtered_df.itertuples():
+    # Create columns for each row to ensure proper alignment
+    row_cols = st.columns(column_widths)
 
-    with cols[0]:
+    with row_cols[0]:
         button_key = f"add_button_{row.Index}"
         button_clicked = st.button("Add", key=button_key)
         if button_clicked:
             enemy = {"name": row.Name, "tier": row.Tier, "role": row.Role}
             st.session_state["current_enemies"].append(enemy)
+
     for i, val in enumerate(row[1:], start=1):
-        display_val = str(val) + "\n\n"
-        print(display_val)
-        cols[i].markdown(
-            f"<small>{display_val}</small>", unsafe_allow_html=True
+        display_val = str(val)
+        row_cols[i].markdown(
+            f"<div style='min-height: 40px; display: flex; "
+            f"align-items: center;'><small>{display_val}</small></div>",
+            unsafe_allow_html=True,
         )
-        cols[i].write("")
 if len(filtered_df) == 0:
     st.write("No entries meet filter criteria")
 st.divider()
@@ -176,11 +177,19 @@ with st.sidebar:
             }
         else:
             added_enemies[enemy_name]["count"] += 1
-    scol1, scol2 = st.columns(2)
     for enemy_dict in added_enemies.values():
-        with scol1:
-            st.write(f"{enemy_dict['name']} x {enemy_dict['count']}")
-        with scol2:
+        # Create columns for each enemy row to ensure proper alignment
+        enemy_cols = st.columns(2)
+
+        with enemy_cols[0]:
+            st.markdown(
+                f"<div style='min-height: 40px; display: flex; "
+                f"align-items: center;'>{enemy_dict['name']} x "
+                f"{enemy_dict['count']}</div>",
+                unsafe_allow_html=True,
+            )
+
+        with enemy_cols[1]:
             remove_button_key = f"remove_button_{enemy_dict['name']}"
             remove_button_clicked = st.button("Remove", key=remove_button_key)
             if remove_button_clicked:
@@ -190,7 +199,6 @@ with st.sidebar:
                     if temp_enemy["name"] == enemy_dict["name"]:
                         st.session_state["current_enemies"].pop(i)
                         st.rerun()
-
                 break
     threat_per_player, category = calculate_total_threat(
         Party_Tier, Party_Size, st.session_state["current_enemies"]
@@ -208,6 +216,7 @@ with pcols[0]:
         st.write(
             """
         SLWG: Stormlight World Guide
+        SLHB: Stormlight Handbook
         """
         )
 with pcols[1]:

@@ -1,0 +1,63 @@
+Name,Tier,Role,Size,Type,Invested,Can Swim,Can Fly,Primary Sense,Source
+Swordmaster Ardent,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Assasin,2,River,Medium,Humanoid,False,False,False,Sight,SLWG
+Axehound,1,Minion,Small,Animal,False,False,False,Smell,SLWG
+Bandit,1,Minion,Medium,Humanoid,False,False,False,Sight,SLWG
+Brightlord,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Chasmfiend,3,Boss,Gargantuan,Animal,False,False,False,Sight,SLWG
+Chull (Large),1,Rival,Large,Animal,False,False,False,Sight,SLWG
+Chull (Huge),1,Rival,Huge,Animal,False,False,False,Sight,SLWG
+Commoner,1,Minion,Medium,Humanoid,False,False,False,Sight,SLWG
+Expert,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Socialite,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Cremling Swarm,1,Rival,Medium,Swarm,False,False,False,Sight,SLWG
+Criminal,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Crime Boss,1,Boss,Medium,Humanoid,False,False,False,Sight,SLWG
+Dustbringer (2nd Ideal),2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Dustbringer (3rd Ideal),3,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Dustbringer (4th Ideal),4,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Altered One,3,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Deepest One,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Devestating One,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Flowing One,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Focused One,4,Boss,Large,Humanoid,True,False,False,Sight,SLWG
+Heavenly One,3,Rival,Medium,Humanoid,True,False,True,Sight,SLWG
+Husked One,3,Boss,Large,Humanoid,True,False,Partial,Sight,SLWG
+Magnified One,3,Boss,Large,Humanoid,True,False,False,Sight,SLWG
+Masked One,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Ghostblood Spy,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Ghostblood Enforcer,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Guard,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Khornak,1,Rival,Medium,Animal,False,True,False,Sight,SLWG
+Larkin,2,Rival,Small,Animal,True,False,False,Sight,SLWG
+Greater Larkin,4,Rival,Small,Animal,True,False,True,Sight,SLWG
+Midnight Essence,3,Rival,Medium,Essence,False,False,False,Smell,SLWG
+Direform Regal,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Nightform Regal,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Stormform Regal,2,Rival,Medium,Humanoid,True,False,False,Sight,SLWG
+Ryshadium,2,Rival,Large,Animal,False,False,False,Sight,SLWG
+Servant of Yelig-Nar,4,Boss,Large,Humanoid,True,False,Partial,Sight,SLWG
+Angerspren,2,Rival,Medium,Entity,False,True,False,Sight,SLWG
+Painspren,1,Minion,Small,Entity,False,False,False,Sight,SLWG
+Duelist Shardbearer,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Elite Shardbearer,3,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Shellmite,1,Minion,Small,Animal,False,False,False,Sight,SLWG
+Warform Singer,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Nimbleform Singer,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Skybreaker (2nd Ideal),2,Rival,Medium,Humanoid,True,False,Partial,Sight,SLWG
+Skybreaker (4th Ideal),4,Rival,Medium,Humanoid,True,False,Partial,Sight,SLWG
+Sleepless,3,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Archer,1,Minion,Medium,Humanoid,False,False,False,Sight,SLWG
+Spear Infantry,1,Minion,Medium,Humanoid,False,False,False,Sight,SLWG
+Thrill Beserker,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Soulcaster Savant,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Windrunner Squire,2,Rival,Medium,Humanoid,True,False,Partial,Sight,SLWG
+Thunderclast,3,Boss,Gargantuan,Entity,False,False,False,Sight,SLWG
+Whitespine,2,Rival,Large,Animal,False,False,False,Smell,SLWG
+Yu-Nerig,2,Boss,Large,Animal,False,True,False,Sight,SLWG
+Skyeel,1,Minion,Medium,Animal,False,True,True,Sight,SLHB
+Horse,2,Rival,Large,Animal,False,False,False,Sight,SLHB
+Mink,1,Rival,Small,Animal,False,False,False,Smell,SLHB
+Captain Selinar,1,Rival,Medium,Humanoid,False,False,False,Sight,Bridge 9
+Eliah Mattal,1,Rival,Medium,Humanoid,False,False,False,Sight,Bridge 9
+
