@@ -1,6 +1,6 @@
 Name,Tier,Role,Size,Type,Invested,Can Swim,Can Fly,Primary Sense,Source
 Swordmaster Ardent,1,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
-Assasin,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
+Assassin,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
 Axehound,1,Minion,Small,Animal,False,False,False,Smell,SLWG
 Bandit,1,Minion,Medium,Humanoid,False,False,False,Sight,SLWG
 Brightlord,2,Rival,Medium,Humanoid,False,False,False,Sight,SLWG
