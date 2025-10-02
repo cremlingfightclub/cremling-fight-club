@@ -9,7 +9,7 @@ def calculate_total_threat(party_tier, party_size, enemy_list):
         base_threat = role_dict[enemy["role"]]
         enemy_tier = enemy["tier"]
         tier_delta = int(enemy_tier) - int(party_tier)
-        adjusted_threat = base_threat * (2.0**tier_delta)
+        adjusted_threat = base_threat * (2.0 ** tier_delta)
         if adjusted_threat < 0.25:
             adjusted_threat = 0.0
         total_threat += adjusted_threat
@@ -249,9 +249,9 @@ with pcols[2]:
         if st.session_state.get("uploaded_file_name") != uploaded_file.name:
             st.session_state["entities_df"] = pd.read_csv(uploaded_file)
             st.session_state["uploaded_file_name"] = uploaded_file.name
-            st.session_state["current_enemies"] = (
-                []
-            )  # Reset enemies when new file is loaded
+            st.session_state[
+                "current_enemies"
+            ] = []  # Reset enemies when new file is loaded
             st.rerun()
 with pcols[3]:
     with st.expander("Leave Feedback"):
@@ -267,7 +267,7 @@ with pcols[3]:
                 file.write(str(likes))
             st.write(f"{likes} likes so far.")
         st.write(
-            "To report a bug, please send a message to cremlingfightclub (at) gmail.com. If enough people ask for a feature, I might even add it."
+            "To report a bug, please send a message to cremlingfightclub (at) gmail.com. If enough people ask for a feature, I might even add it. Thanks go to scheidtzera for their contributions to entities.csv"
         )
 
 
