@@ -60,4 +60,22 @@ Horse,2,Rival,Large,Animal,False,False,False,Sight,SLHB
 Mink,1,Rival,Small,Animal,False,False,False,Smell,SLHB
 Captain Selinar,1,Rival,Medium,Humanoid,False,False,False,Sight,Bridge 9
 Eliah Mattal,1,Rival,Medium,Humanoid,False,False,False,Sight,Bridge 9
-
+Envoyform Regal,2,Minion,Medium,Humanoid,False,False,False,Sight,Advanced Adversaries
+Relayform Regal,2,Minion,Medium,Humanoid,True,False,False,Sight,Advanced Adversaries
+Reveler of Ashertmarn,2,Rival,Medium,Humanoid,False,False,False,Sight,Advanced Adversaries
+Yu-Thorak,2,Boss,Huge,Animal,False,True,False,Sight,Advanced Adversaries
+Altered One (Boss Variant),3,Boss,Medium,Humanoid,True,False,False,Sight,Advanced Adversaries
+Focused One (Rival Variant),3,Rival,Large,Humanoid,True,False,False,Sight,Advanced Adversaries
+Husked One (Rival Variant),2,Rival,Large,Humanoid,True,False,False,Sight,Advanced Adversaries
+Eyes of Pala Agent,1,Rival,Medium,Humanoid,False,False,False,Sight,Stonewalkers
+Eyes of Pala Watcher,2,Rival,Medium,Humanoid,False,False,False,Hearing,Stonewalkers
+Juvenile Whitespine,1,Rival,Medium,Animal,False,False,False,Smell,Stonewalkers
+Kaiana,1,Rival,Medium,Humanoid,True,False,False,Sight,Stonewalkers
+Lilinum,2,Rival,Medium,Humanoid,True,False,False,Sight,Stonewalkers
+Shadowform Zealot,1,Rival,Medium,Humanoid,True,False,False,Sight,Stonewalkers
+Greater Skyeel,1,Rival,Medium,Animal,False,True,True,Sight,Stonewalkers
+Taszo-son-Clutio,1,Rival,Medium,Humanoid,False,False,False,Sight,Stonewalkers
+Veth,1,Boss,Medium,Humanoid,False,False,False,Sight,Stonewalkers
+Ylt,1,Boss,Medium,Humanoid,True,False,False,Sight,Stonewalkers
+Zealot,1,Minion,Medium,Humanoid,False,False,False,Sight,Stonewalkers
+Spearmaster,2,Rival,Medium,Humanoid,False,False,False,Sight,Stonewalkers
