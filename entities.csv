@@ -79,3 +79,46 @@ Veth,1,Boss,Medium,Humanoid,False,False,False,Sight,Stonewalkers
 Ylt,1,Boss,Medium,Humanoid,True,False,False,Sight,Stonewalkers
 Zealot,1,Minion,Medium,Humanoid,False,False,False,Sight,Stonewalkers
 Spearmaster,2,Rival,Medium,Humanoid,False,False,False,Sight,Stonewalkers
+Advisor,2,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Agent of the Set,3,Rival,Medium,Humanoid,True,False,False,Sight,MBWG
+Avatar of Trell,4,Boss,Medium,Humanoid,True,False,False,Sight,MBWG
+Bodyguard,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Commoner,1,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Con Artist,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Detective,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Enforcer,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Fanatic,2,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Feruchemist,3,Rival,Medium,Humanoid,True,False,False,Sight,MBWG
+Garrisoner,1,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Ghostblood,3,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Hazekiller,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Hazekiller Elite,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Hemalurgic Chimera,3,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Hemalurgic Chimera Pack Leader,3,Rival,Large,Humanoid,False,False,False,Sight,MBWG
+Informant,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Ironeyes,4,Boss,Medium,Humanoid,True,False,False,Sight,MBWG
+Kandra Defender,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Kandra Spy,3,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Koloss Neophyte,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Koloss Veteran,3,Rival,Large,Humanoid,False,False,False,Sight,MBWG
+Koloss Ancient,4,Rival,Large,Humanoid,False,False,False,Sight,MBWG
+Koloss-Blooded Officer,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Malwish Pilot,1,Rival,Medium,Humanoid,True,False,False,Sight,MBWG
+Mastermind,2,Boss,Medium,Humanoid,False,False,False,Sight,MBWG
+Merchant,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Mistborn Assassin,3,Boss,Medium,Humanoid,True,False,False,Sight,MBWG
+Mistborn Courtier,3,Rival,Medium,Humanoid,True,False,False,Sight,MBWG
+Mistwraith,2,Minion,Huge,Entity,False,False,False,Smell,MBWG
+Obligator,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Constable,1,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Lawkeeper,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Outlaw,1,Minion,Medium,Humanoid,False,False,False,Sight,MBWG
+Outlaw Boss,1,Boss,Medium,Humanoid,False,False,False,Sight,MBWG
+Rebel,1,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Socialite,2,Rival,Medium,Humanoid,False,False,False,Sight,MBWG
+Steel Inquisitor,3,Rival,Medium,Humanoid,True,False,False,Allomancy,MBWG
+Cat,1,Minion,Small,Animal,False,False,False,Sight,MBHB
+Raven,1,Minion,Small,Animal,False,False,True,Sight,MBHB
+Wolfhound,1,Rival,Medium,Animal,False,False,False,Smell,MBHB
+Horse,2,Rival,Large,Animal,False,False,False,Sight,MBHB
+Lion,2,Rival,Medium,Animal,False,False,False,Sight,MBHB

@@ -280,8 +280,10 @@ with pcols[0]:
     with st.expander("Abbreviations"):
         st.write(
             """
-        SLWG: Stormlight World Guide
-        SLHB: Stormlight Handbook
+        SLWG: Stormlight World Guide\n
+        SLHB: Stormlight Handbook\n
+        MBWG: Mistborn World Guide\n
+        MBHB: Mistborn Handbook\n
         """
         )
 with pcols[1]:
