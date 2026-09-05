@@ -10,6 +10,8 @@ def calculate_total_threat(party_tier, party_size, enemy_list):
         enemy_tier = enemy["tier"]
         tier_delta = int(enemy_tier) - int(party_tier)
         adjusted_threat = base_threat * (2.0 ** tier_delta)
+        if enemy.get("with_module"):
+            adjusted_threat *= 1.5
         if adjusted_threat < 0.25:
             adjusted_threat = 0.0
         total_threat += adjusted_threat
@@ -32,6 +34,18 @@ st.set_page_config(
     page_title="Cremling Fight Club",
     page_icon=":crab:",
 )
+st.html(
+    """
+    <style>
+    div[class*="st-key-add_module_button_"] button {
+        white-space: pre-line;
+        height: auto;
+        line-height: 1.15;
+        text-align: center;
+    }
+    </style>
+    """
+)
 
 if st.session_state.get("entities_df") is None:
     st.session_state["entities_df"] = pd.read_csv("entities.csv")
@@ -45,13 +59,6 @@ st.title("Cremling Fight Club")
 st.markdown("A Cosmere RPG Combat Planner")
 
 
-column_widths = [1] + [1] * len(st.session_state["entities_df"].columns)
-column_widths[1] = 2  # Make second column twice as wide
-column_widths[5] = 1.5  # Make sixth column 50% wider
-columns = st.columns(column_widths)
-
-# Display column headers
-# columns[0].write("Add")
 selected_values_dict = {}
 fcol1, fcol2 = st.columns(2)
 with fcol1:
@@ -110,6 +117,21 @@ with fcol2:
         ],
         key="sort_option",
     )
+    all_columns = st.session_state["entities_df"].columns.tolist()
+    default_display_cols = [
+        col
+        for col in ["Name", "Tier", "Role", "Type", "Invested", "Source"]
+        if col in all_columns
+    ]
+    with st.expander("Columns to display"):
+        display_cols = st.multiselect(
+            "Columns to display",
+            options=all_columns,
+            default=default_display_cols,
+            key="display_columns",
+            help="Choose which entity columns appear in the table.",
+            label_visibility="collapsed",
+        )
 
 # Apply sorting
 if sort_option == "Tier (ascending)":
@@ -133,8 +155,18 @@ elif sort_option == "Name (A-Z)":
 elif sort_option == "Name (Z-A)":
     filtered_df = filtered_df.sort_values("Name", ascending=False)
 
+display_cols = [col for col in display_cols if col in filtered_df.columns]
+column_widths = [1, 2]
+for col in display_cols:
+    if col == "Name":
+        column_widths.append(2)
+    elif col == "Type":
+        column_widths.append(1.5)
+    else:
+        column_widths.append(1)
+
 header_cols = st.columns(column_widths)
-for i, col in enumerate(filtered_df.columns, start=1):
+for i, col in enumerate(display_cols, start=2):
     header_cols[i].markdown(
         f"<small><strong>{col}</strong></small>", unsafe_allow_html=True
     )
@@ -148,11 +180,32 @@ for row in filtered_df.itertuples():
         button_key = f"add_button_{row.Index}"
         button_clicked = st.button("Add", key=button_key)
         if button_clicked:
-            enemy = {"name": row.Name, "tier": row.Tier, "role": row.Role}
+            enemy = {
+                "name": row.Name,
+                "tier": row.Tier,
+                "role": row.Role,
+                "with_module": False,
+            }
             st.session_state["current_enemies"].append(enemy)
 
-    for i, val in enumerate(row[1:], start=1):
-        display_val = str(val)
+    with row_cols[1]:
+        module_button_key = f"add_module_button_{row.Index}"
+        module_button_clicked = st.button(
+            "Add With\nModule",
+            key=module_button_key,
+        )
+        if module_button_clicked:
+            st.session_state["current_enemies"].append(
+                {
+                    "name": row.Name,
+                    "tier": row.Tier,
+                    "role": row.Role,
+                    "with_module": True,
+                }
+            )
+
+    for i, col in enumerate(display_cols, start=2):
+        display_val = str(filtered_df.at[row.Index, col])
         row_cols[i].markdown(
             f"<div style='min-height: 40px; display: flex; "
             f"align-items: center;'><small>{display_val}</small></div>",
@@ -167,36 +220,48 @@ with st.sidebar:
     Party_Size = st.slider("Party Size", min_value=1, max_value=10, value=1)
     added_enemies = {}
     for enemy in st.session_state["current_enemies"]:
-        enemy_name = enemy["name"]
-        if enemy_name not in added_enemies:
-            added_enemies[enemy_name] = {
+        with_module = bool(enemy.get("with_module"))
+        enemy_key = (enemy["name"], with_module)
+        if enemy_key not in added_enemies:
+            added_enemies[enemy_key] = {
                 "tier": enemy["tier"],
                 "role": enemy["role"],
-                "name": enemy_name,
+                "name": enemy["name"],
+                "with_module": with_module,
                 "count": 1,
             }
         else:
-            added_enemies[enemy_name]["count"] += 1
+            added_enemies[enemy_key]["count"] += 1
     for enemy_dict in added_enemies.values():
         # Create columns for each enemy row to ensure proper alignment
         enemy_cols = st.columns(2)
+        display_name = enemy_dict["name"]
+        if enemy_dict["with_module"]:
+            display_name = f"{display_name} + module"
 
         with enemy_cols[0]:
             st.markdown(
                 f"<div style='min-height: 40px; display: flex; "
-                f"align-items: center;'>{enemy_dict['name']} x "
+                f"align-items: center; font-size: 12px;'>{display_name} x "
                 f"{enemy_dict['count']}</div>",
                 unsafe_allow_html=True,
             )
 
         with enemy_cols[1]:
-            remove_button_key = f"remove_button_{enemy_dict['name']}"
+            remove_suffix = "_module" if enemy_dict["with_module"] else ""
+            remove_button_key = (
+                f"remove_button_{enemy_dict['name']}{remove_suffix}"
+            )
             remove_button_clicked = st.button("Remove", key=remove_button_key)
             if remove_button_clicked:
                 for i, temp_enemy in enumerate(
                     st.session_state["current_enemies"]
                 ):
-                    if temp_enemy["name"] == enemy_dict["name"]:
+                    same_name = temp_enemy["name"] == enemy_dict["name"]
+                    same_module = bool(temp_enemy.get("with_module")) == (
+                        enemy_dict["with_module"]
+                    )
+                    if same_name and same_module:
                         st.session_state["current_enemies"].pop(i)
                         st.rerun()
                 break
