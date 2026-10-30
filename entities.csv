@@ -122,3 +122,4 @@ Raven,1,Minion,Small,Animal,False,False,True,Sight,MBHB
 Wolfhound,1,Rival,Medium,Animal,False,False,False,Smell,MBHB
 Horse,2,Rival,Large,Animal,False,False,False,Sight,MBHB
 Lion,2,Rival,Medium,Animal,False,False,False,Sight,MBHB
+Ghostblood Recruit,2,Rival,Medium,Humanoid,False,False,False,Sight,Fear The Wraits
